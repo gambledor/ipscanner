@@ -21,3 +21,7 @@ for example
 ```bash
 sudo ipScanner -i eth0
 ```
+
+## Improvements
+
+- Add concurrency for scans
