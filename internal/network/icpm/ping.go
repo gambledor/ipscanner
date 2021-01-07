@@ -8,8 +8,8 @@ import (
 	"time"
 )
 
-// Ping makes a call to host in ip4 and icmp protocolo
-func Ping(host string, Log *log.Logger) {
+// Ping makes a call to ip4 host on icmp protocol
+func Ping(host string, log *log.Logger) {
 	var size int
 	var timeout int64
 	var seq int16 = 1
@@ -53,8 +53,7 @@ func Ping(host string, Log *log.Logger) {
 	if err != nil || receive[echoReplyHeadLen+4] != msg[4] || receive[echoReplyHeadLen+5] != msg[5] || receive[echoReplyHeadLen+6] != msg[6] || receive[echoReplyHeadLen+7] != msg[7] || endduration >= int(timeout) || receive[echoReplyHeadLen] == 11 {
 		//
 	} else {
-		// Log.Print("扫描到主机地址:", host)
-		Log.Print("indirizzo ip attivo: ", host)
+		log.Print("indirizzo ip attivo: ", host)
 	}
 
 }
